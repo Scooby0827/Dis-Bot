@@ -1,16 +1,22 @@
+#These are used for env variables
 import os
 from dotenv import load_dotenv
+#Used to communicate with the discord api
 import discord
 from discord.ext import commands
+#used to grab info off of youtube links
 import yt_dlp
 
+#Write the token to a txt file
 with open('token.txt','w') as file:
     file.write("MTIyMDk1NDMxNDU3OTc3NTQ5OA.GKb6ZW.E4QuyQuTEWETPW5JH_mfgt0woLIsJAe9eO379I")
 print("Token written over")
 
+#sets the first line = the first line
 with open('token.txt','r')as file:
     first_line = file.readline()
-    
+
+#writes first_line variable to new file    
 with open('firstline.txt','w') as new_file:
     new_file.write(first_line)
     
