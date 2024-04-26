@@ -4,7 +4,17 @@ import discord
 from discord.ext import commands
 import yt_dlp
 
+with open('token.txt','w') as file:
+    file.write("MTIyMDk1NDMxNDU3OTc3NTQ5OA.GKb6ZW.E4QuyQuTEWETPW5JH_mfgt0woLIsJAe9eO379I")
+print("Token written over")
 
+with open('token.txt','r')as file:
+    first_line = file.readline()
+    
+with open('firstline.txt','w') as new_file:
+    new_file.write(first_line)
+    
+print('First line is copied')
 
 # Initializes the bot with the command prefix '!' and all intents enabled.
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
@@ -79,5 +89,5 @@ async def pause(ctx):
     await ctx.send('Paused')
 
 # Runs the bot with the provided token. 
-client.run("MTIyMDk1NDMxNDU3OTc3NTQ5OA.GKb6ZW.E4QuyQuTEWETPW5JH_mfgt0woLIsJAe9eO379I")
+client.run(first_line)
 
